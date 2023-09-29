@@ -1,0 +1,33 @@
+li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+
+
+.nav-menu-items{
+    margin-left: 30%;
+}
+
+.navbar{
+    background-color: black;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.nav-text {
+    justify-content: start;
+    align-items: center;
+    padding: 0px 0px 0px 16px;
+    color: white;
+  }
+
+.nav-text a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
