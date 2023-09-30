@@ -9,12 +9,14 @@ import ParticleAnimation from 'react-particle-animation';
 function App() {
   return (
     <>
+    <div className='app'>
       <Router>
         <Navbar />
         <Routes>
           <Route path='/' exact element={<Home/>} />
         </Routes>
       </Router>
+      </div>
     </>
   ); 
 }

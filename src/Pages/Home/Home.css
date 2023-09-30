@@ -1,15 +1,21 @@
 
-.react-reveal{
-    duration: 2000ms;
+body{
+    display: grid;
+    background-color: #FCEEDD;
+    color: #170029;
+}
 
+.particles{
+    position: absolute;
+    z-index: -1;
 }
 
 .photo-container{
     display: flex;
     float: right;
-    height: 40em;
-    padding-top: 5em;
-    padding-right: 20em;
+    height: 40rem;
+    padding-top: 5rem;
+    padding-right: 20rem;
 }
 
 .photo{
@@ -17,6 +23,9 @@
     border-style:solid;
     border-color:black;
     border-width: 5px;
+}
+
+.introduction-container{
 }
 
 .introduction{
@@ -37,13 +46,68 @@
     padding-left: 5%;
     padding-right: 5%;
     flex-wrap: wrap;
-    border-left-style: solid;
-    border-right-style: solid;
-    border-color: blue;
-    
 }
 
 .image{
     height: 20em;
     border-radius: 30px;
+}
+.image:hover{
+    opacity: 0.5;
+}
+
+.about-container{
+    display: grid;
+    font-size: 24px;
+    width: 50%;
+    margin: 30vh 0 50vh 0;
+    padding-right: 5vw;
+    padding-left: 25vw;
+    float: left;
+    text-align: center;
+}
+.about-title{
+    float: left;
+    margin-bottom: 6px;
+}
+
+.about-description{
+    padding-top: 10px;
+}
+
+.star{
+    position: relative;
+
+}
+
+.illustrations-title{
+    display: flex;
+    left: 0;
+    right: 0;
+    padding-left: 45vw;
+    padding-right: 25vw;
+    padding-top: 100px;
+    text-align: left;
+    font-size: large;
+    font-size: 24px;
+}
+
+.clicked-image{
+    position: fixed;
+    z-index: 999;
+    height: 80%;
+    margin-top: 0%;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.close-button{
+    color: black;
+    position: fixed;
+    border: none;
+    background: none;
+    right: 0;
+    top: 0;
 }

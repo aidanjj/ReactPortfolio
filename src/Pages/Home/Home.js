@@ -1,22 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
+import { Link } from 'react-router-dom';
 import Image from '../../Components/Image/Image';
 import {ImageData} from './ImageData.js';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-
-import ParticleAnimation from 'react-particle-animation'
-import Example from './Example'
-import Reveal from 'react-reveal/Reveal';
-import ScrollAnimation from 'react-animate-on-scroll';
+import ParticleAnimation from './ParticleAnimation';
+import {BsStar} from 'react-icons/bs';
+import {FaTimes} from 'react-icons/fa';
 import './Home.css'
 import 'animate.css';
-import { render } from '@testing-library/react';
-
 function Home(){
+    const [curImage,setCurImage] = useState("");
+    const [isImageClicked,setIsImageClicked] = useState(false);
+    const handleImageClick = (event) => {
+        setCurImage(event.target.id);
+        setIsImageClicked(true);
+    }
+    const handleClose = () => {
+        setIsImageClicked(false);
+    }
     return (
-        <>
-        <ParticleAnimation/>
+        <div className='home'>
+        {isImageClicked ? (
+            <>
+            <Fade>
+            <img className='clicked-image' src={require('../../assets/' + curImage + '.png')} alt=''/>
+            <button className='close-button' onClick={handleClose}>
+                <FaTimes size={42}/>
+            </button>
+            </Fade>
+            </>
+        ) : null}
+        <div className='particles'><ParticleAnimation /></div>
         <div className='introduction-container'>
         <div className='introduction'>
         <Fade left duration={1500}>
@@ -32,21 +48,38 @@ function Home(){
             </Zoom>
         </div>
         </div>
-    <div>
+
+        <div className='about-container'>
+            <Fade bottom duration={1500}>
+                <h1 className='about-title'>About me</h1>
+            </Fade>
+            <Fade bottom duration={1500} delay={500}><BsStar className='star'/></Fade>
+            <Fade bottom duration={1500} delay={1000}>
+            <p1 className='about-description'>Welcome to AlbertJDesigns! I am Albert Edmundson, a Graphic designer specializing in creating unique and visually appealing designs.  I attend the University of Minnesota Duluth for Graphic design and Marketing. My passion for design has led me to create designs that look great and communicate the essence of the brand. Whether it's a logo, a brochure, a book cover, T-shirt, Mug or anything else. I put my heart and soul into every project to ensure that the end result is perfect. This website is a showcase of my work. Please take a look at my portfolio to see some of my recent projects. If you like what you see, please contact me to discuss your design needs!</p1>
+            </Fade>
+            
+        </div>
+        
+
+    <div className='illustrations-container'>
+        <Fade bottom duration={1000} fraction={.5}>
+            <h1 className='illustrations-title'>Illustrations</h1><br/>
+        </Fade>
         <div className='image-container'>
             {ImageData.map((item,index) => {
                 return(
                     <li key={index} className='image-list'>
-                        <Zoom fraction={.5}>
-                        <img src={require('../../assets/' + item.name + '.png')} alt='' className='image'/>
-                        </Zoom>
+                        <Fade bottom fraction={.5}>
+                        <Link>
+                        <img src={require('../../assets/' + item.name + '.png')} alt='' className='image' id={item.name} onClick={handleImageClick}/>
+                        </Link>
+                        </Fade>
                     </li>
                 );
             })}
         </div>
-        
     </div>
-    </>
+    </div>
     );
 }
 export default Home;
