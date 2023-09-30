@@ -4,21 +4,22 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import {NavbarData} from './NavbarData';
 import {IconContext} from 'react-icons';
+import Fade from 'react-reveal/Fade';
 import './Navbar.css';
 
 function Navbar(){
     return (
         <>
         <div className='nav'>
+        <Fade top delay={1000}>
         <IconContext.Provider value={{color: '#fff'}}>
             <nav className='navbar'>
                 <ul className='nav-menu-items'>
                     {NavbarData.map((item,index) => {
                         return(
-                        
                         <li key={index} className={item.cName}>
                             <Link to={item.path}>
-                                <span>{item.title}</span>
+                                <p1 className='text'>{item.title}</p1>
                             </Link>
                         </li>
                         
@@ -27,6 +28,7 @@ function Navbar(){
                 </ul>
                 </nav>
             </IconContext.Provider>
+            </Fade>
             </div>
         </>
     )

@@ -3,11 +3,12 @@ import Navbar from './Components/Navbar/Navbar';
 import Home from './Pages/Home/Home';
 import TitleBar from './Components/TitleBar/TitleBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import ParticleAnimation from 'react-particle-animation';
 
 function App() {
   return (
     <>
-      <TitleBar/>
       <Router>
         <Navbar />
         <Routes>
