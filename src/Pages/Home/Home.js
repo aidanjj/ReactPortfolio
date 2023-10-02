@@ -21,15 +21,17 @@ function Home(){
         setIsImageClicked(false);
     }
     return (
-        <div className='home'>
+        <>
         {isImageClicked ? (
             <>
+            <div className='viewing-image-container'>
             <Fade>
             <img className='clicked-image' src={require('../../assets/' + curImage + '.png')} alt=''/>
             <button className='close-button' onClick={handleClose}>
                 <FaTimes size={42}/>
             </button>
             </Fade>
+            </div>
             </>
         ) : null}
         <div className='particles'><ParticleAnimation /></div>
@@ -50,11 +52,11 @@ function Home(){
         </div>
 
         <div className='about-container'>
-            <Fade bottom duration={1500}>
+            <Fade bottom duration={1500} fraction={1}>
                 <h1 className='about-title'>About me</h1>
             </Fade>
-            <Fade bottom duration={1500} delay={500}><BsStar className='star'/></Fade>
-            <Fade bottom duration={1500} delay={1000}>
+            <Fade bottom duration={1500} delay={500} fraction={1}><BsStar className='star'/></Fade>
+            <Fade bottom duration={1500} delay={1000} fraction={1}>
             <p1 className='about-description'>Welcome to AlbertJDesigns! I am Albert Edmundson, a Graphic designer specializing in creating unique and visually appealing designs.  I attend the University of Minnesota Duluth for Graphic design and Marketing. My passion for design has led me to create designs that look great and communicate the essence of the brand. Whether it's a logo, a brochure, a book cover, T-shirt, Mug or anything else. I put my heart and soul into every project to ensure that the end result is perfect. This website is a showcase of my work. Please take a look at my portfolio to see some of my recent projects. If you like what you see, please contact me to discuss your design needs!</p1>
             </Fade>
             
@@ -79,7 +81,7 @@ function Home(){
             })}
         </div>
     </div>
-    </div>
+    </>
     );
 }
 export default Home;

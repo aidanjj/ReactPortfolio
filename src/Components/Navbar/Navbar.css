@@ -1,30 +1,32 @@
+body{
+  justify-content: center;
+}
+
 li {
     display: inline-block;
-    margin-right: 10px;
+    
   }
 
 
 
 .nav-menu-items{
-    margin-left: 30%;
 }
 
 .navbar{
     z-index: 9999;
     background-color: black;
     width: 50%;
-    margin-left: 25%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin-top: -20px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
 }
 
 .nav-text {
-    justify-content: start;
-    align-items: center;
-    margin-left: -100px;
-    padding: 0px 64px 0px 64px;
     color: white;
+    margin: 0px 64px 0 64px;
   }
 
 .nav-text a{

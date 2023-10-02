@@ -1,8 +1,10 @@
 
 body{
-    display: grid;
+    display: flex;
     background-color: #FCEEDD;
     color: #170029;
+    height: 1000vh;
+    justify-content: center;
 }
 
 .particles{
@@ -10,29 +12,33 @@ body{
     z-index: -1;
 }
 
-.photo-container{
-    display: flex;
-    float: right;
-    height: 40rem;
-    padding-top: 5rem;
-    padding-right: 20rem;
-}
 
 .photo{
+    flex-shrink: 2;
+    width: 20rem;
+    float: right;
     border-radius: 30px;
     border-style:solid;
     border-color:black;
     border-width: 5px;
+    margin-top: 15rem;
+    
 }
 
 .introduction-container{
+    display: flex;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .introduction{
-    display: inline-block;
+    flex-shrink: 2;
     float: left;
-    margin: 15em 0em 30em 0em;
-    padding-left: 20em;
+    padding-right: 5%;
+    padding-top: 15rem;
 }
 
 .image-container{
@@ -57,17 +63,15 @@ body{
 }
 
 .about-container{
-    display: grid;
+    
+    padding-top: 65vh;
     font-size: 24px;
     width: 50%;
-    margin: 30vh 0 50vh 0;
-    padding-right: 5vw;
-    padding-left: 25vw;
-    float: left;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .about-title{
-    float: left;
     margin-bottom: 6px;
 }
 
@@ -75,10 +79,6 @@ body{
     padding-top: 10px;
 }
 
-.star{
-    position: relative;
-
-}
 
 .illustrations-title{
     display: flex;
@@ -86,11 +86,12 @@ body{
     right: 0;
     padding-left: 45vw;
     padding-right: 25vw;
-    padding-top: 100px;
+    padding-top: 65vh;
     text-align: left;
     font-size: large;
-    font-size: 24px;
+    font-size: 48px;
 }
+
 
 .clicked-image{
     position: fixed;
@@ -106,8 +107,12 @@ body{
 .close-button{
     color: black;
     position: fixed;
+    display: flex;
     border: none;
     background: none;
     right: 0;
     top: 0;
+}
+.close-button:hover{
+    color: gray;
 }
