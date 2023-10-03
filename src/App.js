@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <div className='app'>
-      <Router>
+      <Router basename="https://aidanjj.github.io/ReactPortfolio/">
         <Navbar />
         <Routes>
           <Route path='/' exact element={<Home/>} />
